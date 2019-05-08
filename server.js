@@ -10,7 +10,7 @@ app.use(morgan('dev'))
 
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-mongoose.connect( 'mongodb://localhost:27017/first-db', {useNewUrlParser: true}, () => {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/first-db', {useNewUrlParser: true}, () => {
     console.log('[o] Connected to the DB')
 })
 
