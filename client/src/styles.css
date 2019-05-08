@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+}
+
+.living {
+    background-color: red;
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid black;
+}
+.notLiving {
+    background-color: gray;
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid black;
+}
