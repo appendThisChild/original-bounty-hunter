@@ -1,40 +1,53 @@
 import React from "react"
 
 const BountyForm = (props) => {
-    const { handleSubmit, handleChange, btnText, firstName, lastName, living } = props
+    const { handleSubmit, handleChange, btnText, firstName, lastName, living, className } = props
     return(
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="text"
-                name="firstName"
-                value={firstName}
-                onChange={handleChange}
-                placeholder="First Name"/>
-            <input 
-                type="text"
-                name="lastName"
-                value={lastName}
-                onChange={handleChange}
-                placeholder="Last Name"/>
-            <span> Check if living: </span>
-            <input 
-                type="checkbox"
-                name="living"
-                checked={living}
-                onChange={handleChange}
-                placeholder="First Name"/>
-            <label> Sith: </label>
-            <input 
-                type="radio"
-                name="side"
-                value="Sith"
-                onChange={handleChange}/>
-            <label> Jedi: </label>
-            <input 
-                type="radio"
-                name="side"
-                value="Jedi"
-                onChange={handleChange}/>
+        <form className={className} onSubmit={handleSubmit}>
+            {className === "bountyForm" ? 
+                <h1>Add new bounty</h1>
+            : null}
+            <div>
+                <input 
+                    type="text"
+                    name="firstName"
+                    value={firstName}
+                    onChange={handleChange}
+                    placeholder="Bounty's First Name"/>
+                <input 
+                    type="text"
+                    name="lastName"
+                    value={lastName}
+                    onChange={handleChange}
+                    placeholder="Bounty's Last Name"/>
+            </div>
+            <span>
+                Check if living:
+                <input 
+                    type="checkbox"
+                    name="living"
+                    checked={living}
+                    onChange={handleChange}
+                />
+            </span>
+            <span>
+                Sith:
+                <input 
+                    type="radio"
+                    name="side"
+                    value="Sith"
+                    onChange={handleChange}
+                />
+            </span>
+            <span>
+                Jedi:
+                <input 
+                    type="radio"
+                    name="side"
+                    value="Jedi"
+                    onChange={handleChange}
+                />
+            </span>
             <button>{btnText}</button>
         </form>
     )

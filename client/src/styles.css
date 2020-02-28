@@ -1,16 +1,259 @@
 * {
     margin: 0;
+    padding: 0;
 }
 
-.living {
-    background-color: red;
-    margin: 2px;
+@font-face {
+    font-family: StarWars;
+    src:url(./fonts//Starjedi.ttf)
+}
+
+.top > header {
+    background-image: url(./images/space_16x9_0.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+
+    border-bottom: 1px solid black;
+
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.top > header > h1:first-child {
+    font-size: 48px;
+}
+.top > header > h1 {
+    line-height: 40px;
+    letter-spacing: 2px;
+    font-family: StarWars;
+    font-size: 30px;
+    font-weight: 500;
+}  
+
+.bountyForm {
+    width: 97%;
+    background-color: cadetblue;
+    border-radius: 3px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+}
+.bountyForm > h1 {
+    text-align: center;
+
+    font-weight: 100;
+    letter-spacing: 1px;
+    font-size: 30px;
+    padding: 10px;
+}
+.bountyForm > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.bountyForm > div > input {
+
+    margin-bottom: 10px;
     padding: 5px;
-    border: 1px solid black;
+    border: 0px;
+    background-color: rgb(112, 191, 194);
+    border-radius: 2px;
+
+    font-size: 22px;
+    text-align: center;
+    font-family: auto;
+    letter-spacing: .5px;
+}
+.bountyForm > span {
+    display: flex;
+    align-items: center;
+
+    font-size: 22px;
+    padding-top: 10px;
+    letter-spacing: .5px;
+}
+.bountyForm > span > input {
+    margin-left: 5px;
+    height: 17px;
+    width: 17px;
+    
+}
+.bountyForm > button {
+    border: 0px;
+
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(62, 104, 105);
+    color: white;
+    font-size: 23px;
+    font-family: auto;
+    letter-spacing: .5px;
+    padding: 10px;
+}
+
+.top > main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px;
+    padding-top: 35px;
+}
+.top > main > img {
+    padding: 20px;
+    width: 175px;
+}
+
+
+
+
+
+
+
+
+
+.bountyList {
+    padding: 5px;
+    padding-top: 35px;
+}
+.bountyList > h1 {
+    text-align: center;
+
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-family: StarWars;
+    font-size: 35px;
+    line-height: 35px;
+    padding: 20px;
+}
+
+
+
+
+.bounty {
+    margin-top: 5px;
+    padding: 10px;
+}
+.living {
+    background-color: orangered;
 }
 .notLiving {
     background-color: gray;
-    margin: 2px;
+}
+.bounty > button:first-child {
+    display: block;
+    margin-left: auto;
+    font-family: auto;
+    font-size: 16px;
+    letter-spacing: .5px;
+    background-color: white;
+    border: 0px;
+    padding: 3px;
+}
+.bounty > h1 {
+    text-align: center;
+    font-size: 33px;
+    font-weight: 100;
+}
+.bounty > h2 {
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+.bounty > h4 {
+    font-size: 23px;
+    font-weight: 100;
+}
+.bounty > button:last-child {
+    border: 0px;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: auto;
+    line-height: 15px;
+
+    padding: 2px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid black;
+}
+
+
+.bountyListForm {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 10px;
+}
+.bountyListForm > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.bountyListForm > div > input {
+
+    margin-bottom: 10px;
     padding: 5px;
-    border: 1px solid black;
+    border: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+
+    font-size: 33px;
+    text-align: center;
+    font-family: auto;
+    letter-spacing: .5px;
+}
+.bountyListForm > span {
+    display: flex;
+    align-items: center;
+
+    font-size: 22px;
+    padding-top: 10px;
+    letter-spacing: .5px;
+}
+.bountyListForm > span > input {
+    margin-left: 5px;
+    height: 17px;
+    width: 17px;
+    
+}
+.bountyListForm > button {
+    border: 0px;
+
+    margin-top: 5px;
+    margin-left: auto;
+    background-color: white;
+    font-size: 23px;
+    font-family: auto;
+    letter-spacing: .5px;
+    padding: 7px;
+}
+
+@media (min-width: 425px){
+    .bountyForm {
+        width: 405px;
+    }
+    .top > main > img {
+        width: 200px;
+    }
+}
+@media (min-width: 768px) {
+    .bountyList > div {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
+    .bounty {
+        margin-top: 35px;
+        width: 33%;
+    }
+    .top > main {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }

@@ -38,24 +38,26 @@ class Bounty extends Component {
     render(){
         const { firstName, lastName, side, living, bountyAmount, _id, deleteBounty } = this.props
         return(
-            <div className={living ? "living" : "notLiving"}>
+            <div className={`bounty ${living ? "living" : "notLiving"}`}>
                 {!this.state.editToggle ?
                     <>
-                        <h1>{firstName} {lastName}</h1>
-                        <h2>{side}</h2>
-                        <h4>{bountyAmount}</h4>
-                        <button onClick={() => deleteBounty(_id)}>Delete</button>
                         <button onClick={this.toggler}>Edit</button>
+                        <h1>{lastName},</h1>
+                        <h1>{firstName}</h1>
+                        <h2>{side}</h2>
+                        <h4>Reward: &#x20B6; {bountyAmount * 1000}</h4>
+                        <button onClick={() => deleteBounty(_id)}>Remove</button>
                     </>
                     :
                     <>
+                    <button onClick={this.toggler}>Cancel</button>
                     <BountyForm 
+                        className={"bountyListForm"}
                         handleChange={this.handleChange}
                         handleSubmit={this.handleSubmit}
-                        btnText="Submit Edit"
+                        btnText="Submit"
                         {...this.state}
                     />
-                    <button onClick={this.toggler}>Cancel</button>
                     </>
                 }
             </div>

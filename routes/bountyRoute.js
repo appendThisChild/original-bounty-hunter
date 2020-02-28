@@ -25,7 +25,7 @@ bountyRouter.route('/')
 
 bountyRouter.route('/:_id')
     .get((req, res, next) => {
-        Bounty.findOne({_id: req.params._id},
+        Bounty.findOne({_id: req.params._id}, 
             (err, foundBounty) => {
             if (err){
                 res.status(500)
